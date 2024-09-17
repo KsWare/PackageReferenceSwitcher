@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>KsWare.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <PackageId>KsWare.$(AssemblyName)</PackageId>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>KsWare</Authors>
+    <Company>KsWare</Company>
+    <Copyright>Copyright © 2024 by KsWare. All rights reserved.</Copyright>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <ApplicationIcon>Properties\app.ico</ApplicationIcon>
+    <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Properties\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CHANGELOG.md" Link="Properties\CHANGELOG.md" />
+    <None Include="..\..\LICENSE.txt" Link="Properties\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md" Link="Properties\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VsFileEditor\src\VsFileEditor\VsFileEditor.csproj" Condition="'$(Configuration)' == 'Debug'" />
+    <PackageReference Include="KsWare.VsFileEditor" Version="0.1.0" Condition="'$(Configuration)' == 'Release'" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PackageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

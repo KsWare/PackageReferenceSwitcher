@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Start": {
+      "commandName": "Project",
+      "commandLineArgs": "init D:\\Develop\\Extern\\GitHub.KsWare\\PacketReferenceSwitcher\\PacketReferenceSwitcher.sln"
+    }
+  }
+}
